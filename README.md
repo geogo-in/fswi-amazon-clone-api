@@ -3,8 +3,10 @@
 ## API Index
 
 ##### Category
-* Listing
-* Create
-* Details
-* Category Products
+- [x] Listing all categories
+- [x] Create new category
+- [x] View category details
+- [x] List all category products
+- [ ] Update category
+- [ ] Delete a category
 
