@@ -9,4 +9,5 @@ module.exports = (app) => {
   app.post('/categories', categoriesController.create);
   app.put('/categories/:id', categoriesController.update);
   app.delete('/categories/:id', categoriesController.destroy);
+  app.get('/categories/:id/products', categoriesController.products);
 }

@@ -16,12 +16,13 @@ exports.index = function(req, res, next) {
 // Show Product action
 exports.show = function(req, res, next) {
   Product.findOne({ _id: req.params.id })
-  .then(product => {
-    return res.status(200).send(product);
-  })
-  .catch(error => {
-    return res.status(400).send({ error: 'Unable to find this resource' });
-  })
+    .populate('category')
+    .then(product => {
+      return res.status(200).send(product);
+    })
+    .catch(error => {
+      return res.status(400).send({ error: 'Unable to find this resource' });
+    })
 }
 
 // Create Product action
@@ -58,7 +59,6 @@ exports.create = function(req, res, next) {
     .catch(error => {
       return res.status(400).send({ error: 'Invalid Category' });
     })
-
 }
 
 // Update Product action
