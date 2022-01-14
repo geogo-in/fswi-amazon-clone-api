@@ -27,8 +27,10 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 
 ### User
 Users can signup to this application using email and password. 
+
 __User__ model should have the following attributes: *email (type: string), password (type: string), mobile*.
-*Tip* Can use Passport and JWT for user authentication module
+
+*Tip:* Can use Passport and JWT for user authentication module
 - [ ] API for user signup
 - [ ] API for user signin
 - [ ] API for user signout
