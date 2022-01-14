@@ -3,11 +3,14 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 
 ## API Index for all modules
 
-##### Category
+#### Category
 - [x] Listing all categories
 - [x] Create new category
 - [x] View category details
 - [x] List all category products
 - [ ] Update category
 - [ ] Delete a category
+
+##### Scope of Development
+- Upload category images
 
