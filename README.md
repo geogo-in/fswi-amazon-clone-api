@@ -50,3 +50,4 @@ Banners are image sliders that are present in amazon homepage.
 - Do the changes and create a Pull Request.
 - Remember the PR should have clean code, proper comments, proper commits with messages.
 - Many others can also make PR, but the most complete one will be merged.
+- You can also create PR for this Readme, if you have any relevant module in mind for this repo, to make it awesome!!
