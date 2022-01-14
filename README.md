@@ -25,3 +25,9 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - Add reviews for products
 - Add ratings for products
 
+## How to Contribute
+- Make sure you understand the requirement well.
+- Fork this repository to your github account.
+- Do the changes and create a Pull Request.
+- Remember the PR should have clean code, proper comments, proper commits with messages.
+- Many others can also make PR, but the most complete one will be merged.
