@@ -14,7 +14,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 ##### Scope of Development
 - Upload category images
 
-#### Product
+### Product
 - [x] Listing all products
 - [x] Create new product
 - [x] View product details
