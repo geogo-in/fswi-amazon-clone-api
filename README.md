@@ -1,5 +1,5 @@
 # GEOGO Full Stack Web Internship Amazon Clone APIs
-Hey, let's make this repo all much rich as possible by contributing more endpoints. Follow the contribution guidelines, make open source contributions and make your github profile to standout.
+Hey, let's make this repo all much rich as possible by contributing more endpoints. Follow the contribution guidelines, make open source contributions and make your github profile to standout. Check the Postman collection attached in this repo, this would help you to test API endpoints.
 
 ## API Index
 
