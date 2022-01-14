@@ -1,6 +1,7 @@
 # GEOGO Full Stack Web Internship Amazon Clone APIs
+Hey, let's make this repo all much rich as possible by contributing more endpoints. Check how to contribute in this section below.
 
-## API Index
+## API Index for all modules
 
 ##### Category
 - [x] Listing all categories
