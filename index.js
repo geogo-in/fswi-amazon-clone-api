@@ -28,7 +28,7 @@ require('./src/routes/productRoutes')(app);
 require('./src/routes/categoryRoutes')(app);
 
 // Setup Server
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3200;
 const server = http.createServer(app);
 
 server.listen(port, "0.0.0.0");
