@@ -26,7 +26,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - Add ratings for products
 
 ### Banner
-Banners are image sliders that are present in amazon homepage. A **Banner** should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*
+Banners are image sliders that are present in amazon homepage. **Banner** model should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*.
 - [x] Listing all active banners
 - [x] Create new banner
 - [ ] Update banner
