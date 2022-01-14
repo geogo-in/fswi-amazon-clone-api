@@ -28,6 +28,9 @@ const upload = multer({
 const productsController = require('../controllers/productsController');
 
 module.exports = (app) => {
+  app.get('/', function(req, res, next) {
+    res.send({ ping: 'FSWI Amazon Clone API' });
+  });
   //adaptive practive routes 
   app.get('/products', productsController.index);
   app.get('/products/:id', productsController.show);
