@@ -1,7 +1,10 @@
 # GEOGO Full Stack Web Internship Amazon Clone APIs
 
-# APIs Ready
+## APIs Ready
 
-### Categoriy
+##### Category
 * Listing
+* Create
+* Details
+* Category Products
 
