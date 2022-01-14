@@ -22,5 +22,6 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - [ ] Delete a product
 
 ##### Scope of Development
-- Upload category images
+- Add reviews for products
+- Add ratings for products
 
