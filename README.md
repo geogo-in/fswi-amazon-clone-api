@@ -3,7 +3,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 
 ## API Index
 
-#### Category
+### Category
 - [x] Listing all categories
 - [x] Create new category
 - [x] View category details
@@ -11,7 +11,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - [ ] Update category
 - [ ] Delete a category
 
-##### Scope of Development
+#### Scope of Development
 - Upload category images
 
 ### Product
@@ -21,7 +21,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - [ ] Update product
 - [ ] Delete a product
 
-##### Scope of Development
+#### Scope of Development
 - Add reviews for products
 - Add ratings for products
 
