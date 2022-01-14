@@ -34,11 +34,19 @@ __User__ model should have the following attributes: *email (type: string), pass
 - [ ] API for user signout
 - [ ] API to get user details
 
+### Order
+Users can place orders for multiple products. __Order__ model should have the following attributes: *user (ref), orderItems (array of items), serial (String), status (pending, confirmed, shipped, delivered, cancelled), orderItemTotal, discount, shipping, grandTotal (Number), paymentMode (cod, card, online etc.), paidAmount (Number, Should be filled once payment made)*.
+- [ ] API for listing all orders of an user
+- [ ] Create new order
+- [ ] View order details
+- [ ] Cancel an Order
+- [ ] Update an order
+
 ### Banner
 Banners are image sliders that are present in amazon homepage. 
 **Banner** model should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*.
-- [x] API for listing all active banners
-- [x] Create new banner
+- [ ] API for listing all active banners
+- [ ] Create new banner
 - [ ] Update banner
 - [ ] Delete a banner
 
