@@ -4,7 +4,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 ## API Index
 
 ### Category
-- [x] Listing all categories
+- [x] API for listing all categories
 - [x] Create new category
 - [x] View category details
 - [x] List all category products
@@ -15,7 +15,7 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - Upload category images
 
 ### Product
-- [x] Listing all products
+- [x] API for listing all products
 - [x] Create new product
 - [x] View product details
 - [ ] Update product
@@ -25,12 +25,22 @@ Hey, let's make this repo all much rich as possible by contributing more endpoin
 - Add reviews for products
 - Add ratings for products
 
+### User
+Users can signup to this application using email and password. 
+__User__ model should have the following attributes: *email (type: string), password (type: string), mobile*.
+- [ ] API for user signup
+- [ ] API for user signin
+- [ ] API for user signout
+
 ### Banner
-Banners are image sliders that are present in amazon homepage. **Banner** model should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*.
-- [x] Listing all active banners
+Banners are image sliders that are present in amazon homepage. 
+**Banner** model should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*.
+- [x] API for listing all active banners
 - [x] Create new banner
 - [ ] Update banner
 - [ ] Delete a banner
+
+
 
 ## How to Contribute
 - Make sure you understand the requirement well.
