@@ -10,7 +10,13 @@ const storage = multer.diskStorage({
   // filename - The name of the file within the destination
   filename: function (req, file, callback) {
     // callback - null means noe error, 2nd parameter gives unique name for image file
-    callback(null, new Date().toISOString() + file.originalname);
+
+    // for mac users 
+    // callback(null, new Date().toISOString() + file.originalname);
+
+    //  ENOENT error was coming as no such file or directory so added replace method in addition.
+    // for windows user 
+    callback(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
   }
 })
 
