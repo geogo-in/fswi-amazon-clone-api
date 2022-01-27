@@ -5,7 +5,9 @@ const multer = require('multer')
 const storage = multer.diskStorage({
   // destination - The folder to which the file has been saved
   destination: function (req, file, callback) {
-    callback(null, './uploads');
+    // callback(null, './uploads');
+    callback(null, path.join(path.dirname(__dirname), './uploads'));
+
   },
   // filename - The name of the file within the destination
   filename: function (req, file, callback) {

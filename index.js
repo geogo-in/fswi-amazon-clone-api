@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+
+// multer is used for handling files in NodeJS
 const multer = require('multer')
 
 const keys = require('./config/keys');
