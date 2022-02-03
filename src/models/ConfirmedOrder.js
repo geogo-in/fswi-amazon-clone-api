@@ -8,7 +8,8 @@ const confirmedOrderSchema = new Schema({
     },
     order: {
         type: Object,
-        required: true
+        required: true,
+        lackbox: true
     },
     paymentMode: {
         // (COD, card, online etc.)

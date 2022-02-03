@@ -27,12 +27,16 @@ exports.create = async (req, res) => {
 exports.show = async (req, res) => {
     try {
         userId = req.user.id;
-        const order = await ConfirmedOrder_Modal.find({ user: userId })
+        const order = await ConfirmedOrder_Modal.find({ user: userId }, { order: 1, paymentMode: 1, paidAmount: 1, createdAt: 1 })
         if (!order) {
             return res.send(404).send("Not found")
         }
         else {
-            res.send(order)
+            res.json({
+                "success": "Your purchase history",
+                "Order": order
+            })
+            // console.log(order);
         }
     }
     catch (error) {

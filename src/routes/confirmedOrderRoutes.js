@@ -6,7 +6,7 @@ const fetchUser = require('../middleware/fetchUser');
 module.exports = (app) => {
     //adaptive practive routes 
     app.post('/order/confirmOrder', fetchUser, confirmedOrderController.create);
-    app.get('/order/:id', fetchUser, confirmedOrderController.show);
+    app.get('/order/confirmedOrder', fetchUser, confirmedOrderController.show);
     // app.patch('/order/:id', fetchUser, confirmedOrderController.update);
     // app.delete('/order/:id', confirmedOrderController.destroy);
     // app.get('/order/orderedProducts', fetchUser, confirmedOrderController.getOrderedProducts);
