@@ -4,12 +4,13 @@ const { Schema } = mongoose;
 // Define our model
 const confirmedOrderSchema = new Schema({
     user: {
-        type: String, //to need to pass in req.body as it'll be taken via auth-token systme
+        // storing userID from the Users model over here like foreign key
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'UserModel' //User.js model was exported as "UserModel"
     },
     order: {
-        type: Object,
+        type: Array,
         required: true,
-        lackbox: true
     },
     paymentMode: {
         // (COD, card, online etc.)
