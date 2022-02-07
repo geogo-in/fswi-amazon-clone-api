@@ -1,58 +1,71 @@
 # GEOGO Full Stack Web Internship Amazon Clone APIs
+
 Hey, let's make this repo all much rich as possible by contributing more endpoints. Follow the contribution guidelines, make open source contributions and make your github profile to standout. Check the Postman collection attached in this repo, this would help you to test API endpoints.
 
 ## API Index
 
 ### Category
+
 - [x] API for listing all categories
 - [x] Create new category
 - [x] View category details
 - [x] List all category products
-- [ ] Update category
-- [ ] Delete a category
+- [x] Update category
+- [x] Delete a category
 
 #### Scope of Development
+
 - Upload category images
 
 ### Product
+
 - [x] API for listing all products
 - [x] Create new product
 - [x] View product details
-- [ ] Update product
-- [ ] Delete a product
+- [x] Update product
+- [x] Delete a product
 
 #### Scope of Development
+
 - Add reviews for products
 - Add ratings for products
 
 ### User
-Users can signup to this application using email and password. 
-__User__ model should have the following attributes: *email (type: string), password (type: string), mobile*.
-*Tip:* Can use Passport and JWT for user authentication module
-- [ ] API for user signup
-- [ ] API for user signin
-- [ ] API for user signout
-- [ ] API to get user details
+
+Users can signup to this application using email and password.
+**User** model should have the following attributes: _email (type: string), password (type: string), mobile_.
+_Tip:_ Can use Passport and JWT for user authentication module.
+Although have used JWT in this project.
+
+- [x] API for user signup
+- [x] API for user signin
+- [x] API to get user details
+- [x] API to update user details
+- [x] API for user signout
 
 ### Order
-Users can place orders for multiple products. __Order__ model should have the following attributes: *user (ref), orderItems (array of items), serial (String), status (pending, confirmed, shipped, delivered, cancelled), orderItemTotal, discount, shipping, grandTotal (Number), paymentMode (cod, card, online etc.), paidAmount (Number, Should be filled once payment made)*.
-- [ ] API for listing all orders of an user
-- [ ] Create new order
-- [ ] View order details
-- [ ] Cancel an Order
-- [ ] Update an order
+
+Users can place orders for multiple products. **Order** model should have the following attributes: _user (ref), orderItems (array of items), serial (String), status (pending, confirmed, shipped, delivered, cancelled), orderItemTotal, discount, shipping, grandTotal (Number), paymentMode (cod, card, online etc.), paidAmount (Number, Should be filled once payment made)_.
+
+- [x] API for listing all orders of an user
+- [x] Create new order
+- [x] View order details
+- [x] Cancel an Order
+- [x] Update an order
 
 ### Banner
-Banners are image sliders that are present in amazon homepage. 
-**Banner** model should have the following attributes: *bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)*.
-- [ ] API for listing all active banners
-- [ ] Create new banner
-- [ ] Update banner
-- [ ] Delete a banner
 
+Banners are image sliders that are present in amazon homepage.
+**Banner** model should have the following attributes: _bannerImage (type: image), isActive (type: boolean), linkedToUrl (type: string)_.
 
+- [x] API for listing all active banners
+- [x] Create new banner
+- [x] Get a specific banner
+- [x] Update banner
+- [x] Delete a banner
 
 ## How to Contribute
+
 - Make sure you understand the requirement well.
 - Fork this repository to your github account.
 - Do the changes and create a Pull Request.
