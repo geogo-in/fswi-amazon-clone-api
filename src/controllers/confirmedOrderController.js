@@ -32,11 +32,7 @@ exports.show = async (req, res) => {
             return res.send(404).send("Not found")
         }
         else {
-            res.json({
-                "success": "Your purchase history",
-                "Order": order
-            })
-            // console.log(order);
+            res.json(order)
         }
     }
     catch (error) {

@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const JWT_SECRET = process.env.JWT_SECRET
 
-//ROUTE 1 : Create a user using POST req "/api/auth/createUser" (Auth not required, login not required.)
+//ROUTE 1 : Create a user using POST req "/auth/createUser" (Auth not required, login not required.)
 router.post("/createUser", [
     // name must be at least 3 chars long
     body('name', "Enter a valid name with minimum 3 characters ").isLength({ min: 3 }),
@@ -19,9 +19,6 @@ router.post("/createUser", [
     body('password', 'Enter a valid password with minimum 5 charachters').isLength({ min: 5 }),
 ], async (req, res) => {
     let success = false;
-    // console.log(req.body);
-    // const new_user = User(req.body);
-    // new_user.save();
 
     const errors = validationResult(req);
     // if errors.isEmpty() is false [i.e. error present] then it'll invert to TRUE and it'll send error message
@@ -44,13 +41,6 @@ router.post("/createUser", [
             email: req.body.email,
             password: securedPassword,
         })
-        // .then(user => res.json(user))
-        //     .catch(err => {
-        //         console.log("Error :", err.message)
-        //         // will send error message on the client screen
-        //         res.json({ error: "Please enter unique value", message: err.message })
-        //     });
-
         const data = {
             user: { id: user.id }
         }
@@ -58,8 +48,6 @@ router.post("/createUser", [
         // console.log(authToken);
         success = true;
         res.json({ success, authToken })
-        // res.send("Yoo")
-        // res.send(req.body)
     }
     catch (error) {
         console.error("Error :", error.message)
@@ -68,7 +56,7 @@ router.post("/createUser", [
 
 })
 
-//ROUTE 2 : Login a uesr using POST req "/api/auth/login" (Auth not required, login not required.)
+//ROUTE 2 : Login a uesr using POST req "/auth/login" (Auth not required, login not required.)
 router.post('/login', [
     // Only check if email if valid or not
     body('email', "Enter a valid E-Mail").isEmail(),
@@ -111,7 +99,7 @@ router.post('/login', [
     }
 })
 
-//ROUTE 3 : Get logged in user details using POST req "/api/auth/getUser" (login required.)
+//ROUTE 3 : Get logged in user details using POST req "/auth/getUser" (login required.)
 // fetchuser is the middleware 
 router.get('/getUser', fetchuser, async (req, res) => {
     try {
@@ -132,6 +120,9 @@ router.get('/getUser', fetchuser, async (req, res) => {
 // fetchuser is the middleware means login is required
 router.get('/logout', fetchuser, async (req, res) => {
     try {
+
+        // ------------- directly do `localStorage.removeItem("token");` on the frontend as token is stored in local storage------------------------------
+
         // let randomNumberToAppend = toString(Math.floor((Math.random() * 1000) + 1));
         // let randomIndex = Math.floor((Math.random() * 10) + 1);
         // let hashedRandomNumberToAppend = await bcrypt.hash(randomNumberToAppend, 10);

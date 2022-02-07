@@ -51,7 +51,7 @@ exports.show = async (req, res) => {
 exports.update = async (req, res) => {
     try {
         // destructing these out of the req.body
-        const { orderedItem, quantity, orderItemTotal, discount, shippingAddress, grandTotal, paymentMode } = req.body;
+        const { orderedItem, quantity, orderItemTotal, discount, shippingAddress, grandTotal } = req.body;
 
         const updatedOrder = {};
         // if name exists in the req.body then put it in the updated title
@@ -62,7 +62,7 @@ exports.update = async (req, res) => {
         if (shippingAddress) { updatedOrder.shippingAddress = shippingAddress };
         if (grandTotal) { updatedOrder.grandTotal = grandTotal };
 
-        console.log(updatedOrder);
+        // console.log(updatedOrder);
 
         // Searching a banner from DB to update it. the id is obtained the req URL params.
         let existingOrder = await Order_Model.findById(req.params.id);
@@ -89,7 +89,7 @@ exports.update = async (req, res) => {
 exports.destroy = async (req, res) => {
     try {
         let existingOrder = await Order_Model.findById(req.params.id);
-        console.log(existingOrder);
+        // console.log(existingOrder);
         if (!existingOrder) {
             return res.sendStatus(404).send("Not found")
         }

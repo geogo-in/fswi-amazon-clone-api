@@ -41,7 +41,7 @@ exports.create = function (req, res, next) {
 
 // Category Products
 exports.products = function (req, res, next) {
-  console.log(req.params.id)
+  // console.log(req.params.id)
   // Find category
   Category.findOne({ _id: req.params.id })
     .then(category => {
@@ -82,12 +82,6 @@ exports.update = async function (req, res) {
       return res.send(404).send("Not found")
     }
 
-    // ----No need for this `if` condition part as not associating each product with unique users 
-    // if product from DB doesn't match with the id sent in the request URL
-    // if (existingPoduct.user.toString() !== req.user.id) {
-    //   return res.send(401).send("Not allowed to update the note")
-    // }
-
     // 2nd arg is the update parameter
     existingCategory = await Category.findByIdAndUpdate(req.params.id, { $set: updatedCategory }, { new: true })
     // `{new: true})` tells mongoose to return the new latest versin of the document.
@@ -114,17 +108,10 @@ exports.destroy = async function (req, res) {
 
     // Searching a note from DB to delete it. the id is obtained the req URL params.
     let existingCategory = await Category.findById(req.params.id);
-    console.log("existingCategory is", existingCategory);
+    // console.log("existingCategory is", existingCategory);
     if (!existingCategory) {
       return res.sendStatus(404).send("Not found")
     }
-
-    // ----No need for this `if` condition part as not associating each product with unique users 
-    // if Note from DB doesn't match with the id sent in the request URL
-    // if (existingNote.user.toString() !== req.user.id) {
-    //   return res.send(401).send("Not allowed to delete the note")
-    // }
-    // 2nd arg is the update parameter
 
     existingCategory = await Category.findByIdAndDelete(req.params.id)
 

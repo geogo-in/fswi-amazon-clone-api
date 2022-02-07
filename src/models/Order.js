@@ -37,7 +37,6 @@ const orderSchema = new Schema({
         required: true
     },
     paidAmount: {
-        // (COD, card, online etc.)
         type: Number,
         // required: true
     },

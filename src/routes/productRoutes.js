@@ -50,7 +50,6 @@ module.exports = (app) => {
   //adaptive practive routes 
   app.get('/products', productsController.index);
   app.get('/products/:id', productsController.show);
-  // app.post('/products', upload.single('productImage'), productsController.create);
   app.post('/products', productsController.create);
   app.patch('/products/:id', productsController.update);
   app.delete('/products/:id', productsController.destroy);

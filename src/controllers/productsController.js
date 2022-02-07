@@ -28,7 +28,6 @@ exports.show = function (req, res, next) {
 
 // Create Product action
 exports.create = function (req, res, next) {
-  // console.log(req.file);
   // Find category
   Category.findOne({ _id: req.body.category })
     .then(category => {
@@ -98,12 +97,6 @@ exports.update = async function (req, res) {
       return res.send(404).send("Not found")
     }
 
-    // ----No need for this `if` condition part as not associating each product with unique users 
-    // if product from DB doesn't match with the id sent in the request URL
-    // if (existingPoduct.user.toString() !== req.user.id) {
-    //   return res.send(401).send("Not allowed to update the note")
-    // }
-
     // 2nd arg is the update parameter
     existingPoduct = await Product.findByIdAndUpdate(req.params.id, { $set: updatedProduct }, { new: true })
     // `{new: true})` tells mongoose to return the new latest versin of the document.
@@ -130,13 +123,6 @@ exports.destroy = async function (req, res) {
     if (!existingNote) {
       return res.send(404).send("Not found")
     }
-
-    // ----No need for this `if` condition part as not associating each product with unique users 
-    // if Note from DB doesn't match with the id sent in the request URL
-    // if (existingNote.user.toString() !== req.user.id) {
-    //   return res.send(401).send("Not allowed to delete the note")
-    // }
-    // 2nd arg is the update parameter
 
     existingNote = await Product.findByIdAndDelete(req.params.id)
 

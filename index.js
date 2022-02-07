@@ -37,7 +37,6 @@ require('./src/routes/bannerRoutes')(app);
 require('./src/routes/orderRoutes')(app);
 require('./src/routes/confirmedOrderRoutes')(app);
 app.use("/auth", require("./src/routes/userRoutes"))
-// app.use("/banner", require("./src/routes/bannerRoutes"))
 
 // Setup Server
 const port = process.env.PORT || 8080;

@@ -45,21 +45,12 @@ exports.update = async (req, res) => {
     try {
         // destructing these out of the req.body
         const { name, bannerImage, isActive, linkedToUrl } = req.body;
-
-        // console.log("active?", req.body.isActive);
-        // console.log(typeof req.body.isActive);
-        // let isActiveString = req.body.isActive.toString();
-        // console.log(typeof isActiveString);
-        // console.log(typeof req.body.name);
-
         const updatedBanner = {};
         // if name exists in the req.body then put it in the updated title
         if (isActive) { updatedBanner.isActive = isActive };
         if (name) { updatedBanner.name = name };
         if (bannerImage) { updatedBanner.bannerImage = bannerImage };
         if (linkedToUrl) { updatedBanner.linkedToUrl = linkedToUrl };
-
-        console.log(updatedBanner);
 
         // Searching a banner from DB to update it. the id is obtained the req URL params.
         let existingBanner = await Banner_Model.findById(req.params.id);
@@ -85,7 +76,7 @@ exports.update = async (req, res) => {
 exports.destroy = async (req, res) => {
     try {
         let existingBanner = await Banner_Model.findById(req.params.id);
-        console.log(existingBanner);
+        // console.log(existingBanner);
         if (!existingBanner) {
             return res.sendStatus(404).send("Not found")
         }
@@ -113,7 +104,7 @@ exports.index = async (req, res) => {
         let allBanners = await Banner_Model.find({ isActive: "true" }, { _id: 0, name: 1, isActive: 1, bannerImage: 1, linkedToUrl: 1 });
         // Meaning -> SELECT name, isActive, bannerImage, linkedToUrl from Banner_Model WHERE isActive=true
 
-        console.log(allBanners);
+        // console.log(allBanners);
         if (!allBanners) {
             return res.sendStatus(404).send("Not found")
         }
