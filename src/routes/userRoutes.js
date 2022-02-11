@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 const fetchuser = require("../middleware/fetchUser")
 require("dotenv").config();
 
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = "meetst@nofmcu"
+// const JWT_SECRET = process.env.JWT_SECRET
 
 //ROUTE 1 : Create a user using POST req "/auth/createUser" (Auth not required, login not required.)
 router.post("/createUser", [
