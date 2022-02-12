@@ -9,5 +9,5 @@ module.exports = (app) => {
     app.get('/review/product/:id', fetchUser, reviewsController.index);
     app.get('/review/user/:id', fetchUser, reviewsController.show);
     app.patch('/review/:id', fetchUser, reviewsController.update);
-    app.delete('/review/:id', reviewsController.destroy);
+    app.delete('/review/:id', fetchUser, reviewsController.destroy);
 }
