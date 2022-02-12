@@ -7,6 +7,7 @@ exports.create = async (req, res) => {
             user: req.user.id,
             order: req.body.order,
             paymentMode: req.body.paymentMode,
+            shippingAddress: req.body.shippingAddress,
             paidAmount: req.body.paidAmount,
         })
         newOrder.save((err, savedOrder) => {

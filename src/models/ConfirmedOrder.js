@@ -12,6 +12,10 @@ const confirmedOrderSchema = new Schema({
         type: Array,
         required: true,
     },
+    shippingAddress: {
+        type: String,
+        required: true
+    },
     paymentMode: {
         // (COD, card, online etc.)
         type: String,

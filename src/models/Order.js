@@ -28,10 +28,6 @@ const orderSchema = new Schema({
         type: Number,
         default: 0
     },
-    shippingAddress: {
-        type: String,
-        required: true
-    },
     grandTotal: {
         type: Number,
         required: true

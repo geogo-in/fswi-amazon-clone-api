@@ -10,7 +10,6 @@ exports.create = async (req, res) => {
             status: req.body.status,
             orderItemTotal: req.body.orderItemTotal,
             discount: req.body.discount,
-            shippingAddress: req.body.shippingAddress,
             grandTotal: req.body.grandTotal,
             paymentMode: req.body.paymentMode,
             paidAmount: req.body.paidAmount,
@@ -59,7 +58,6 @@ exports.update = async (req, res) => {
         if (quantity) { updatedOrder.quantity = quantity };
         if (orderItemTotal) { updatedOrder.orderItemTotal = orderItemTotal };
         if (discount) { updatedOrder.discount = discount };
-        if (shippingAddress) { updatedOrder.shippingAddress = shippingAddress };
         if (grandTotal) { updatedOrder.grandTotal = grandTotal };
 
         // console.log(updatedOrder);
