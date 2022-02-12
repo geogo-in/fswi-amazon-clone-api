@@ -40,3 +40,24 @@ exports.show = async (req, res) => {
         res.status(500).send("Internal server error occured.")
     }
 }
+
+// to removw user specific order history 
+exports.destroy = async (req, res) => {
+    try {
+        let existingOrder = await ConfirmedOrder_Modal.findById(req.params.id);
+        console.log(existingOrder);
+        // console.log(existingOrder);
+        if (!existingOrder) {
+            return res.sendStatus(404).send("Not found")
+        }
+        deletedOrder = await ConfirmedOrder_Modal.findByIdAndDelete(req.params.id)
+        res.json({
+            "success": "Order cancelled successfully", "existingOrder": existingOrder,
+            "deletedOrder": deletedOrder
+        })
+    }
+    catch (error) {
+        console.error("Error :", error.message)
+        res.status(500).send("Internal server error occured.")
+    }
+}

@@ -8,5 +8,5 @@ module.exports = (app) => {
     app.post('/order/confirmOrder', fetchUser, confirmedOrderController.create);
     app.get('/order/confirmedOrder', fetchUser, confirmedOrderController.show);
     // app.patch('/order/:id', fetchUser, confirmedOrderController.update);
-    // app.delete('/order/:id', confirmedOrderController.destroy);
+    app.delete('/order/confirmedOrder/:id', fetchUser, confirmedOrderController.destroy);
 }
