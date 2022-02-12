@@ -6,6 +6,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken');
 const fetchuser = require("../middleware/fetchUser")
 require("dotenv").config();
+var http = require('http');
 
 const JWT_SECRET = "meetst@nofmcu"
 // const JWT_SECRET = process.env.JWT_SECRET
@@ -119,22 +120,29 @@ router.get('/getUser', fetchuser, async (req, res) => {
 
 //ROUTE 4 :Logout
 // fetchuser is the middleware means login is required
-router.get('/logout', fetchuser, async (req, res) => {
+router.get('/logout', fetchuser, async (req, res, next) => {
     try {
+        let success = false;
+        const userId = req.user.id;
+        var authToken = jwt.sign(userId, JWT_SECRET)
+        // console.log("authtoken before", authToken);
 
-        // ------------- directly do `localStorage.removeItem("token");` on the frontend as token is stored in local storage------------------------------
+        // const token = req.token;
+        var authToken = null;
+        // console.log("authtoken after", authToken);
 
-        // let randomNumberToAppend = toString(Math.floor((Math.random() * 1000) + 1));
-        // let randomIndex = Math.floor((Math.random() * 10) + 1);
-        // let hashedRandomNumberToAppend = await bcrypt.hash(randomNumberToAppend, 10);
+        console.log("before");
+        // console.log(JSON.stringify(req.headers));
+        console.log("after");
+        // res.removeHeader("auth-token");
+        // res.set('auth-token', 'xyzABC');
+        // res.append('auth-token', 'xyzABC');
+        // res.setHeader('auth-token', 'xyzABC');
+        next();
+        // console.log(JSON.stringify(req.headers));
 
-        // // now just concat the hashed random number to the end of the token
-        // console.log("Token before", req.token);
-        // req.token = req.token + hashedRandomNumberToAppend;
-        // console.log("Token after", req.token);
-        // res.setHeader("auth-token", req.token)
-        // res.removeHeader("auth-token")
-        return res.status(200).json('Logged out');
+        // return res.status(200).json('Logged out');
+        res.status(200).send({ success, token: null });
     }
     catch (error) {
         console.error("Error :", error.message)
