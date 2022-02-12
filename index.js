@@ -15,6 +15,7 @@ require('./src/models/Category');
 require('./src/models/Banner');
 require('./src/models/Order');
 require('./src/models/ConfirmedOrder');
+require('./src/models/Reviews');
 
 // Setup DB
 mongoose.Promise = global.Promise;
@@ -36,6 +37,7 @@ require('./src/routes/categoryRoutes')(app);
 require('./src/routes/bannerRoutes')(app);
 require('./src/routes/orderRoutes')(app);
 require('./src/routes/confirmedOrderRoutes')(app);
+require('./src/routes/reviewsRoutes')(app);
 app.use("/auth", require("./src/routes/userRoutes"))
 
 // Setup Server
