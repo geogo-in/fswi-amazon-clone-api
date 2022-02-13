@@ -6,7 +6,7 @@ exports.create = async (req, res) => {
         const newReview = new Reviews_Model({
             user: req.user.id,
             product: req.body.product,
-            heading: req.body.heading,
+            headline: req.body.headline,
             review: req.body.review,
             rating: req.body.rating
         })
@@ -65,10 +65,10 @@ exports.show = async (req, res) => {
 exports.update = async (req, res) => {
     try {
         // destructing these out of the req.body
-        const { heading, review, rating } = req.body;
+        const { headline, review, rating } = req.body;
 
         const updatedReview = {};
-        if (heading) { updatedReview.heading = heading };
+        if (headline) { updatedReview.headline = headline };
         if (review) { updatedReview.review = review };
         if (rating) { updatedReview.rating = rating };
 

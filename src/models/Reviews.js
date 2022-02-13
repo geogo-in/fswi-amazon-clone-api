@@ -12,7 +12,7 @@ const reviewsOrderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     },
-    heading: {
+    headline: {
         type: String,
         required: true,
     },
