@@ -27,13 +27,14 @@ exports.create = async (req, res) => {
 // to GET all reviews of a specific product
 exports.index = async (req, res) => {
     try {
-        productId = req.body.product;
-        const review = await Reviews_Model.find(productId)
+        const productId = req.params.id;
+        console.log(productId);
+        let review = await Reviews_Model.find({ product: productId })
         if (!review) {
             return res.send(404).send("Not found")
         }
         else {
-            res.send(review)
+            res.json(review)
         }
     }
     catch (error) {
