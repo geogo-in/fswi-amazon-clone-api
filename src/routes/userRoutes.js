@@ -118,6 +118,22 @@ router.get('/getUser', fetchuser, async (req, res) => {
     }
 })
 
+router.get('/getUsername/:id', async (req, res) => {
+    try {
+        // getting userId from the request header using middleware `fetchuser.js`
+        userId = req.params.id;
+        // getting a user from User model by using it's Id and selecting everything except pw
+        // const user = await User.findById(userId).select("-password")
+        const user = await User.findById(userId, { name: 1 })
+        // Will send the user we needed from the token provided in the header.
+        res.send(user)
+    }
+    catch (error) {
+        console.error("Error :", error.message)
+        res.status(500).send("Internal server error occured.")
+    }
+})
+
 //ROUTE 4 :Logout
 // fetchuser is the middleware means login is required
 router.get('/logout', fetchuser, async (req, res, next) => {
