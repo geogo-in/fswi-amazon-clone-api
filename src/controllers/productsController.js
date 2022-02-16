@@ -118,16 +118,15 @@ exports.destroy = async function (req, res) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    // Searching a note from DB to delete it. the id is obtained the req URL params.
-    let existingNote = await Product.findById(req.params.id);
-    if (!existingNote) {
+    let existingProduct = await Product.findById(req.params.id);
+    if (!existingProduct) {
       return res.send(404).send("Not found")
     }
 
-    existingNote = await Product.findByIdAndDelete(req.params.id)
+    existingProduct = await Product.findByIdAndDelete(req.params.id)
 
     res.json({
-      "Success": "Note has been deleted", existingNote: existingNote
+      "Success": "Product has been deleted", existingProduct: existingProduct
     })
   }
   catch (error) {

@@ -106,7 +106,7 @@ exports.destroy = async function (req, res) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    // Searching a note from DB to delete it. the id is obtained the req URL params.
+    // Searching a category from DB to delete it. the id is obtained the req URL params.
     let existingCategory = await Category.findById(req.params.id);
     // console.log("existingCategory is", existingCategory);
     if (!existingCategory) {
