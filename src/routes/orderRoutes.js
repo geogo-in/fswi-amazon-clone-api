@@ -8,6 +8,6 @@ module.exports = (app) => {
     app.post('/order/placeOrder', fetchUser, ordersController.create);
     app.get('/order', fetchUser, ordersController.show);
     app.patch('/order/:id', fetchUser, ordersController.update);
-    app.delete('/order/:id', ordersController.destroy);
+    app.delete('/order/:id', fetchUser, ordersController.destroy);
     app.get('/order/orderedProducts', fetchUser, ordersController.getOrderedProducts);
 }
