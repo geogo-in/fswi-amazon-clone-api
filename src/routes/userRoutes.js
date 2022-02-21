@@ -8,8 +8,8 @@ const fetchuser = require("../middleware/fetchUser")
 require("dotenv").config();
 var http = require('http');
 
-const JWT_SECRET = "meetst@nofmcu"
-// const JWT_SECRET = process.env.JWT_SECRET
+// A `.env` FILE CREATED IN THE MAIN index.js MAIN DIRECTORY WHERE THIS JWT_SECRET IS STORED
+const JWT_SECRET = process.env.JWT_SECRET
 
 //ROUTE 1 : Create a user using POST req "/auth/createUser" (Auth not required, login not required.)
 router.post("/createUser", [

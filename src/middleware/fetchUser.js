@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 require("dotenv").config();
 
-const JWT_SECRET = "meetst@nofmcu"
-// const JWT_SECRET = process.env.JWT_SECRET
+// A `.env` FILE CREATED IN THE MAIN index.js MAIN DIRECTORY WHERE THIS JWT_SECRET IS STORED
+const JWT_SECRET = process.env.JWT_SECRET
 // console.log(JWT_SECRET);
 
 // req, res, next takes a middleware and at the end next() func which will be called which is that async func of `/getUser` in `authorization.js`
