@@ -2,3 +2,10 @@
 /uploads/*.png
 /uploads/*.jpg
 /uploads/*.jpeg
+
+myReadME.md
+
+.env
+
+test.json 
+test2.json 
